@@ -1,5 +1,9 @@
 var request = require('request');
-request('http://127.0.0.1:3000', function (error, response, body) {
+var process = require('process');
+
+let ip = (process.argv[2]);
+
+request(`http://${ip}:3000`, function (error, response, body) {
 
     if (!error && response.statusCode == 200) {
         console.log(body)
